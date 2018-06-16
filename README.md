@@ -1,6 +1,6 @@
 # Newsletter API
 
-Simple API made with node to subscribe email to a mailchimp list
+Simple API made with node to subscribe email to a Mailchimp list
 
 ## Installation
 
@@ -12,7 +12,7 @@ You can use [Pm2](http://pm2.keymetrics.io/)
 
 ## Usage
 
-````
+```
 POST /subscribe
 {
   "email": "hello@example.com"  
