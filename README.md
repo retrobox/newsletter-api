@@ -12,7 +12,7 @@ You can use [Pm2](http://pm2.keymetrics.io/)
 
 ## Usage
 
-````
+```
 POST /subscribe
 {
   "email": "hello@example.com"  
