@@ -67,4 +67,6 @@ app.post("/subscribe", (req, res) => {
   }
 });
 
+console.log("The newsletter api server listen on " + process.env.LISTEN_PORT);
+
 app.listen(process.env.LISTEN_PORT);
