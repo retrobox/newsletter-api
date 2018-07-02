@@ -6,6 +6,7 @@ Simple API made with node to subscribe email to a mailchimp list
 
 - clone this repository
 - `npm install`
+- Puts your environments varibles in a `.env` file
 - `node app.js`
 
 You can use [Pm2](http://pm2.keymetrics.io/)
@@ -20,6 +21,8 @@ POST /subscribe
 ```
 
 ## Environments variables
+
+Example of `.env` file in `.env.example`.
 
 | Name | Example value |
 |----------|----------|
