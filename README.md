@@ -29,3 +29,4 @@ Example of `.env` file in `.env.example`.
 |LISTEN_PORT |  80 |
 |MAILCHIMP_SUBSCRIBE_URL | https://XXX.api.mailchimp.com/3.0/lists/XXXX/members |
 | MAILCHIMP_API_KEY | XXXXXXXXXXXXXXXXXXXXXXXXXXXXX  |
+| DISCORD_WH_URL | https://discordapp.com/api/webhooks/ID/TOKEN  |

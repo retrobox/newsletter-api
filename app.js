@@ -67,13 +67,17 @@ app.post("/subscribe", (req, res) => {
   }
 });
 
-
+//for mailchimp validator
+app.get("/event/subscribe", (req, res) => {
+  res.json(true);
+});
+//for actual wh
 app.post("/event/subscribe", (req, res) => {
   if (
     req.body != undefined &&
     req.body.type == "subscribe"
   ) {
-    //send request to discord wh
+    //send request to discord api via vh
     axios
       .post(
         process.env.DISCORD_WH_URL,
