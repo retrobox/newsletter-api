@@ -67,6 +67,66 @@ app.post("/subscribe", (req, res) => {
   }
 });
 
+
+app.post("/event/subscribe", (req, res) => {
+  if (
+    req.body != undefined &&
+    req.body.type == "subscribe"
+  ) {
+    //send request to discord wh
+    axios
+      .post(
+        process.env.DISCORD_WH_URL,
+        {
+          embeds: [
+            {
+              title: "New subscriber!",
+              fields: [
+                {
+                  name: 'Email',
+                  value: req.body['data[email]']
+                },
+                {
+                  name: 'Ip',
+                  value: req.body['data[ip_opt]']
+                }
+              ]
+            }
+          ]
+        }
+      )
+      .then(response => {
+        res.json({
+          success: true
+        });
+      })
+      .catch(error => {
+        console.log(error);
+        res
+          .status(500)
+          .json({
+            success: false,
+            error: {
+              code: 500,
+              message: "Error while requesting the discord api"
+            }
+          })
+          .end();
+      });
+  } else {
+    res
+      .status(400)
+      .json({
+        success: false,
+        error: {
+          code: 400
+        }
+      })
+      .end();
+  }
+});
+
+
 console.log("The newsletter api server listen on " + process.env.LISTEN_HOST + ":" + process.env.LISTEN_PORT);
 
 app.listen(process.env.LISTEN_PORT, process.env.LISTEN_HOST);
